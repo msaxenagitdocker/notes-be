@@ -1,5 +1,6 @@
 FROM openjdk:11
 EXPOSE 8082
+EXPOSE 3306
 ADD target/notes-be-0.0.1-SNAPSHOT.jar notes-be.jar
 
 # We can easily change the base image in order to use a #different Java version. For example, if we want to use the  #Corretto distribution from Amazon, we can simply change the
