@@ -1,12 +1,6 @@
 FROM openjdk:11
 EXPOSE 8082
-ADD target/notes-be-0.0.1-SNAPSHOT.jar notes-be-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java", "-jar", "notes-be-0.0.1-SNAPSHOT.jar"]
-MAINTAINER saxenamanish
-ENV myenv2 myval2
-
-
-
+ADD target/notes-be-0.0.1-SNAPSHOT.jar notes-be.jar
 
 # We can easily change the base image in order to use a #different Java version. For example, if we want to use the  #Corretto distribution from Amazon, we can simply change the
 # just change fist line
@@ -24,5 +18,11 @@ ENV myenv2 myval2
 # networks: In this section, we're specifying the networks available to our services. In this example, we let docker-compose create a named network of type ‘bridge' for us. If the option external is set to true, it will use an existing one with the given name.
 # Before we continue, we'll check our build-file for syntax-errors:
 # $> docker-compose config
+
+
+
+ENTRYPOINT ["java", "-jar", "notes-be.jar"]
+
+
 
 
